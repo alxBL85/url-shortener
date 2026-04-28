@@ -7,8 +7,8 @@ function shortUrl(user, url) {
 
     const code = nanoid(6);
     user.shorts[code] = { originalUrl: url, visits: 0 };
-
-    return `http://localhost:3000/${code}`;
+    const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+    return `${baseUrl}/${code}`;
 }
 
 function getUrlEntry(user, code) {
