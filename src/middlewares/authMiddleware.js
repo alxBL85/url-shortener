@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = process.env.JWT_SECRET ??  'fake-jwt-secret'; // Cambia esto por una variable de entorno en producción
+const JWT_SECRET = process.env.JWT_SECRET || "default_secret_key"; // En producción, usar una clave segura y almacenada en variables de entorno
 
 const tokenBlacklist = new Set(); // Tokens JWT revocados por logout
 

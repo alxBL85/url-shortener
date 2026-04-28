@@ -2,6 +2,15 @@
 
 Este proyecto es un acortador de URLs basado en Node.js y Express con autenticación JWT. Los datos se almacenan en memoria, por lo que se pierden al detener el servidor.
 
+## Variables de Entorno
+
+El proyecto utiliza las siguientes variables de entorno, definidas en un archivo `.env`:
+
+- `JWT_SECRET`: Clave secreta para firmar y verificar tokens JWT. Debe ser una cadena segura y única.
+- `BASE_URL`: URL base para generar las URLs acortadas, por ejemplo `http://localhost:3000`.
+
+Copia el archivo `.env.example` a `.env` y configura los valores apropiados.
+
 ## Estructura del proyecto
 
 El código está organizado siguiendo una arquitectura MVC:
@@ -67,7 +76,7 @@ Respuesta exitosa:
 
 Respuesta exitosa:
 - `201 Created`
-- `{ shortUrl: 'http://localhost:3000/<code>' }`
+- `{ shortUrl: '<BASE_URL>/<code>' }`
 
 Errores comunes:
 - `400 Bad Request` si `url` no es válido o falta.
