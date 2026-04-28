@@ -2,6 +2,26 @@
 
 Este proyecto es un acortador de URLs basado en Node.js y Express con autenticación JWT. Los datos se almacenan en memoria, por lo que se pierden al detener el servidor.
 
+## Estructura del proyecto
+
+El código está organizado siguiendo una arquitectura MVC:
+
+- `src/models/`: Modelos de datos y lógica de negocio
+  - `userModel.js`: Funciones para manejo de usuarios
+  - `urlModel.js`: Funciones para manejo de URLs acortadas
+- `src/controllers/`: Controladores que manejan las solicitudes HTTP
+  - `authController.js`: Registro, login y logout
+  - `urlController.js`: Acortar URLs, redireccionar y estadísticas
+- `src/middlewares/`: Middlewares personalizados
+  - `authMiddleware.js`: Autenticación JWT
+- `src/routes/`: Definición de rutas
+  - `authRoutes.js`: Rutas de autenticación
+  - `urlRoutes.js`: Rutas de URLs
+- `main.js`: Punto de entrada, configuración de Express
+- `test-shortener.js`: Script de pruebas
+
+## Rutas disponibles
+
 ## Rutas disponibles
 
 ### Registro de usuario
@@ -101,6 +121,12 @@ Inicia la aplicación:
 
 ```bash
 npm run dev
+```
+
+Ejecuta las pruebas:
+
+```bash
+npm run test
 ```
 
 Luego prueba los endpoints con herramientas como `curl`, Postman o Insomnia.
